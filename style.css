@@ -187,7 +187,8 @@ nav ul li a {
 }
 
 .card {
-    width: 300px;
+    width: 90%;
+    max-width: 300px;
     height: 500px;
     padding: 20px;
     background-color: #f2f2f2;
@@ -312,4 +313,88 @@ nav ul li a {
     color: white;
     text-decoration: none;
     font-size: 18px;
+}
+
+/* Responsividade */
+@media screen and (max-width: 480px) {
+    .search-box,
+    nav ul {
+        display: none;
+    }
+
+    .navbar {
+        justify-content: space-between;
+    }
+
+    .logo img {
+        margin-left: 10px;
+    }
+
+    .menu-icon {
+        width: 40px;
+        height: 40px;
+        background-color: #14c0c7;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .menu-icon:before {
+        content: "";
+        width: 20px;
+        height: 2px;
+        background-color: white;
+    }
+
+    .menu {
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: purple;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transform: translateY(-100%);
+        transition: transform 0.3s ease;
+        z-index: 9999;
+    }
+
+    .menu.active {
+        transform: translateY(0);
+    }
+
+    .menu ul {
+        list-style: none;
+        padding: 0;
+        margin: 20px 0;
+    }
+
+    .menu ul li {
+        margin-bottom: 20px;
+    }
+
+    .menu ul li a {
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+    }
+
+    .cards {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .card {
+        width: 90%;
+        margin: 20px auto;
+    }
+
+    .card img {
+        max-height: 200px;
+    }
 }
