@@ -6,30 +6,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PetHouse</title>
     <link rel="stylesheet" href="./style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 </head>
 
 <body>
     
     <header class="navbar">
+        
+        
         <div class="logo">
             <img src="./img/logo-pet.png" alt="Logo">
         </div>
+        
         <div class="search-box">
             <input type="text" placeholder="Pesquisar">
             <button type="submit">Buscar</button>
         </div>
-        <div class="menu-toggle" onclick="toggleSidebar()">
+        <div class="menu-toggle" onclick="toggleSidebar(this)">
             <span></span>
             <span></span>
             <span></span>
         </div>
-        <nav class="sidebar">
-            <ul>
-                <li><a href="#">Produtos</a></li>
-                <li><a href="#">Serviços</a></li>
-                <li><a href="#">Sobre</a></li>
-            </ul>
-        </nav>
+        <div class="sidebar">
+            <div class="sidebar-logo">
+                <img src="./img/logo-pet.png" alt="">
+            </div>
+            <div class="sidebar-icons">
+                <!-- Adicione seus ícones aqui -->
+                <i class="bi bi-bag"></i>
+                <i class="bi bi-box-seam"></i>
+                <i class="bi bi-airplane-engines"></i>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Produtos</a></li>
+                    <li><a href="#">Serviços</a></li>
+                    <li><a href="#">Sobre</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
 
@@ -126,6 +142,13 @@
     var menuToggle = document.querySelector('.menu-toggle');
     sidebar.classList.toggle('sidebar-open');
     menuToggle.classList.toggle('open');
+    
+}
+
+function toggleSidebar(element) {
+    var sidebar = document.querySelector('.sidebar');
+    element.classList.toggle('open');
+    sidebar.classList.toggle('sidebar-open');
 }
 
     </script>
