@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
     <title>PetHouse</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
+    
     <header class="navbar">
         <div class="logo">
             <img src="./img/logo-pet.png" alt="Logo">
@@ -15,18 +18,20 @@
             <input type="text" placeholder="Pesquisar">
             <button type="submit">Buscar</button>
         </div>
-        <div class="menu-toggle">
-            <div class="hamburger"></div>
+        <div class="menu-toggle" onclick="toggleSidebar()">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
-        <nav>
+        <nav class="sidebar">
             <ul>
-                <li><a href="#">Serviços</a></li>
                 <li><a href="#">Produtos</a></li>
+                <li><a href="#">Serviços</a></li>
                 <li><a href="#">Sobre</a></li>
             </ul>
         </nav>
     </header>
-    
+
 
     <div class="slider">
         <div class="slide-container">
@@ -108,13 +113,24 @@
                 <h4>Contatos</h4>
                 <ul>
                     <li><a href="#">Telefone: (XX) XXXX-XXXX</a></li>
-                    <li><a href="#">Eq-mail: contato@pethouse.com</a></li>
+                    <li><a href="#">E-mail: contato@pethouse.com</a></li>
                     <li><a href="#">Endereço: Rua XXXX, Nº XX, Cidade, Estado</a></li>
                 </ul>
             </div>
         </div>
     </footer>
 
+    <script>
+        function toggleSidebar() {
+    var sidebar = document.querySelector('.sidebar');
+    var menuToggle = document.querySelector('.menu-toggle');
+    sidebar.classList.toggle('sidebar-open');
+    menuToggle.classList.toggle('open');
+}
+
+    </script>
+
     <script src="script.js"></script>
 </body>
+
 </html>

@@ -384,9 +384,36 @@ nav ul li a {
         font-size: 18px;
     }
 
+    .about-section {
+        padding: 30px 0; /* Mantive o padding superior e inferior como estava */
+        margin: 50px 20px; /* Aumentei a margem nas laterais */
+    }
+
+    .about-container {
+        max-width: 100%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column; /* Alterei a direção da flexbox para coluna */
+        justify-content: center;
+        align-items: center;
+    }
+
+    .about-text {
+        text-align: left;
+        margin-bottom: 20px; /* Adicionei margem inferior para separar do conteúdo abaixo */
+    }
+
+    .store-image {
+        max-width: 100%; /* Defini a largura máxima da imagem como 100% para ocupar o espaço disponível */
+        margin-top: 20px; /* Aumentei a margem superior para separar a imagem do texto */
+    }
+
+    /* Outras alterações necessárias para dispositivos móveis */
+
     .cards {
         flex-direction: column;
         align-items: stretch;
+        margin-top: 10px;
     }
 
     .card {
@@ -396,5 +423,84 @@ nav ul li a {
 
     .card img {
         max-height: 200px;
+    }
+    
+}
+@media only screen and (max-width: 767px) {
+    .sidebar {
+        position: fixed;
+        top: 0;
+        right: -300px;
+        width: 300px;
+        height: 100%;
+        background-color: #f2f2f2;
+        transition: all 0.3s ease;
+        z-index: 999;
+    }
+
+    .sidebar.sidebar-open {
+        right: 0;
+    }
+
+    .sidebar ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .sidebar li {
+        margin-bottom: 10px;
+    }
+
+    .sidebar a {
+        display: block;
+        padding: 10px;
+        text-decoration: none;
+        color: #000;
+    }
+
+    .menu-toggle {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        z-index: 9999;
+    }
+
+    .menu-toggle span {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 4px;
+        background-color: #000;
+        transition: all 0.3s ease;
+    }
+
+    .menu-toggle span:nth-child(1) {
+        top: 0;
+    }
+
+    .menu-toggle span:nth-child(2) {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .menu-toggle span:nth-child(3) {
+        bottom: 0;
+    }
+
+    .menu-toggle.open span:nth-child(1) {
+        top: 50%;
+        transform: translateY(-50%) rotate(-45deg);
+    }
+
+    .menu-toggle.open span:nth-child(3) {
+        top: 50%;
+        transform: translateY(-50%) rotate(-140deg);
+    }
+
+    .menu-toggle.open span:nth-child(2) {
+        opacity: 0;
     }
 }

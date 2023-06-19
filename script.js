@@ -85,18 +85,3 @@ nextArrow.addEventListener('click', showNextSlide);
 prevArrow.addEventListener('click', showPreviousSlide);
 
 
-// Adicione isso ao seu arquivo script.js
-const menuToggle = document.querySelector('.menu-toggle');
-const sidebar = document.querySelector('.sidebar');
-const content = document.querySelector('.content');
-const closeIcon = document.querySelector('.close-icon');
-
-menuToggle.addEventListener('click', function() {
-    sidebar.classList.toggle('open');
-    content.classList.toggle('open');
-});
-
-closeIcon.addEventListener('click', function() {
-    sidebar.classList.remove('open');
-    content.classList.remove('open');
-});
